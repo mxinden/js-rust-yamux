@@ -1,0 +1,30 @@
+[package]
+name = "js-rust-yamux"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+yamux = "0.10"
+futures = "0.3"
+parity-send-wrapper = "0.1.0"
+wasm-bindgen-futures = "0.4.4"
+js-sys = "0.3.50"
+
+getrandom = { version = "0.2.5", features = ["js"] } # Explicit dependency to be used in `wasm-bindgen` feature
+parking_lot = { version = "0.11", features = ["wasm-bindgen"] } # Explicit dependency to be used in `wasm-bindgen` feature
+instant = { version = "0.1", features = ["wasm-bindgen"] } # Explicit dependency to be used in `wasm-bindgen` feature
+# rand = { version = "0.8", features = ["wasm-bindgen"] } # Explicit dependency to be used in `wasm-bindgen` feature
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'Node',
+  'Window',
+]
